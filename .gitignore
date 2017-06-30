@@ -1,0 +1,7 @@
+node_modules
+.DS_Store
+dist-modules
+TODO.md
+*.log
+build/
+package-lock.json

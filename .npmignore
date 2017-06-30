@@ -1,0 +1,11 @@
+node_modules
+.DS_Store
+.gitignore
+.npmignore
+.travis.yml
+build/
+test/
+*.log
+src
+.babelrc
+.eslintrc
