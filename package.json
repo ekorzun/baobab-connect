@@ -1,6 +1,6 @@
 {
-  "name": "baobab-react",
-  "version": "2.1.2",
+  "name": "baobab-connect",
+  "version": "0.1.1",
   "description": "React integration for Baobab.",
   "main": "./index.js",
   "scripts": {
@@ -13,21 +13,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Yomguithereal/baobab-react"
+    "url": "https://github.com/korzhik/baobab-connect"
   },
   "keywords": [
     "baobab",
     "react"
   ],
   "author": {
-    "name": "Guillaume Plique",
-    "url": "http://github.com/Yomguithereal"
+    "name": "Eugene Korzun",
+    "url": "https://github.com/korzhik"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Yomguithereal/baobab-react/issues"
+    "url": "https://github.com/korzhik/baobab-connect/issues"
   },
-  "homepage": "https://github.com/Yomguithereal/baobab-react",
+  "homepage": "https://github.com/korzhik/baobab-connect",
   "devDependencies": {
     "@yomguithereal/eslint-config": "^2.1.0",
     "babel-cli": "^6.6.4",
