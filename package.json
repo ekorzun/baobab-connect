@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/korzhik/baobab-connect"
+    "url": "https://github.com/ekorzun/baobab-connect"
   },
   "keywords": [
     "baobab",
@@ -21,13 +21,13 @@
   ],
   "author": {
     "name": "Eugene Korzun",
-    "url": "https://github.com/korzhik"
+    "url": "https://github.com/ekorzun"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/korzhik/baobab-connect/issues"
+    "url": "https://github.com/ekorzun/baobab-connect/issues"
   },
-  "homepage": "https://github.com/korzhik/baobab-connect",
+  "homepage": "https://github.com/ekorzun/baobab-connect",
   "devDependencies": {
     "@yomguithereal/eslint-config": "^2.1.0",
     "babel-cli": "^6.6.4",
