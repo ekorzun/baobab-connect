@@ -1,2 +1,2 @@
-import {root}, branch from './dist-modules/branch';
+import branch, {root} from './dist-modules/branch';
 export {root, branch, branch as default};
