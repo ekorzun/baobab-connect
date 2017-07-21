@@ -2,9 +2,18 @@ import Baobab from 'baobab'
 import React from 'react'
 import scu from './scu'
 
-export default function(cursors, _Component){
+export let $tree = null
 
-  let $tree
+export const root = function(tree, Component) {
+
+  if (!(tree instanceof Baobab)) {
+    throw new Error('tree must be instance of Baobab');
+  }
+
+  $tree = tree;
+}
+
+export default function(cursors, _Component){
 
   if(!cursors) {
     throw new Error('invalid cursors')
@@ -15,9 +24,9 @@ export default function(cursors, _Component){
     delete cursors.tree
   }
 
-  if(!$tree) {
-    $tree = require('./root').$tree
-  }
+  // if(!$tree) {
+  //   $tree = require('./root').$tree
+  // }
 
   if(typeof cursors === 'function') {
     cursors = cursors()
