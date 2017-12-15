@@ -1,6 +1,6 @@
 {
   "name": "baobab-connect",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "React integration for Baobab.",
   "main": "./index.js",
   "scripts": {
@@ -39,14 +39,14 @@
     "babelify": "^7.2.0",
     "baobab": "^2.3.3",
     "browserify": "^13.0.0",
+    "create-react-class": "^15.5.3",
     "enzyme": "^2.0.0",
     "eslint": "^2.2.0",
     "jsdom": "^8.1.0",
     "mocha": "^2.2.4",
     "react": "^15.5.0",
     "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
-    "create-react-class": "^15.5.3"
+    "react-test-renderer": "^15.5.4"
   },
   "eslintConfig": {
     "extends": [
