@@ -86,7 +86,14 @@ describe('Higher Order', function() {
     });
 
     it('should be possible to register paths using typical Baobab polymorphisms.', function() {
-      const tree = new Baobab({name: 'John', surname: 'Talbot'}, {asynchronous: false});
+      const tree = new Baobab({
+        user: {
+          name: 'John',
+          surname: 'Talbot'
+        }
+      }, {asynchronous: false});
+
+      root(tree);
 
       class Child extends Component {
         render() {
@@ -100,8 +107,8 @@ describe('Higher Order', function() {
 
       const BranchedChild = branch({
         tree,
-        name: 'name',
-        surname: 'surname'
+        name: 'user.name',
+        surname: 'user.surname'
       }, Child);
 
       const wrapper = mount(<BranchedChild />);

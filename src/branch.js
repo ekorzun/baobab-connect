@@ -1,8 +1,24 @@
 import Baobab from 'baobab'
 import React from 'react'
-import scu from './scu'
 
 export let $tree = null
+
+const scu = (cursors, props, nextProps, state, nextState) => {
+  
+    for (let keys = Object.keys(cursors), i = keys.length; i--;) {
+      if (nextState[keys[i]] !== state[keys[i]]) {
+        return true;
+      }
+    }
+  
+    for (let keys = Object.keys(nextProps), i = keys.length; i--;) {
+      if (nextProps[keys[i]] !== props[keys[i]]) {
+        return true;
+      }
+    }
+  
+    return false;
+  }
 
 export const root = function(tree, Component) {
 
@@ -53,6 +69,8 @@ export default function(cursors, _Component){
       }
     })
 
+    // console.log('_cursors', _cursors);
+
     return class BranchedComponent extends React.Component {
 
       constructor(props, context) {
@@ -68,7 +86,7 @@ export default function(cursors, _Component){
         }
       }
 
-      componentWillMount() {
+      componentDidMount() {
         this._$watcher.on('update', this.onUpdate)
       }
 
