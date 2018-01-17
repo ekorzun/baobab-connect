@@ -1,10 +1,7 @@
-# baobab-connect
 
+## Baobab-connect
 
 [Baobab](https://github.com/Yomguithereal/baobab) and [React](https://reactjs.org) ([Preact](https://preactjs.com) / [InfernoJS](https://github.com/infernojs/inferno)) integration.
-
-
-## Summary
 
 <!-- TOC -->
 
