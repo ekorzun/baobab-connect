@@ -7,7 +7,7 @@ import assert from 'assert';
 import React, {Component} from 'react';
 import {mount} from 'enzyme';
 import Baobab from 'baobab';
-import branch, {root} from '../src/branch';
+import branch, {root} from '../src/connect';
 
 
 /**

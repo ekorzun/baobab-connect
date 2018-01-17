@@ -3,24 +3,7 @@ import React from 'react'
 
 export let $tree = null
 
-const scu = (cursors, props, nextProps, state, nextState) => {
-
-  for (let keys = Object.keys(cursors), i = keys.length; i--;) {
-    if (nextState[keys[i]] !== state[keys[i]]) {
-      return true
-    }
-  }
-
-  for (let keys = Object.keys(nextProps), i = keys.length; i--;) {
-    if (nextProps[keys[i]] !== props[keys[i]]) {
-      return true
-    }
-  }
-
-  return false
-}
-
-export const root = function(tree, Component) {
+export const root = function (tree, Component) {
 
   if (!(tree instanceof Baobab)) {
     throw new Error('tree must be instance of Baobab');
@@ -29,40 +12,36 @@ export const root = function(tree, Component) {
   $tree = tree;
 }
 
-export default function(cursors, _Component){
+export default function (cursors, _Component) {
 
-  if(!cursors) {
+  if (!cursors) {
     throw new Error('invalid cursors')
   }
 
-  if(cursors.tree){
+  if (cursors.tree) {
     $tree = cursors.tree
     delete cursors.tree
   }
 
-  // if(!$tree) {
-  //   $tree = require('./root').$tree
-  // }
-
-  if(typeof cursors === 'function') {
+  if (typeof cursors === 'function') {
     cursors = cursors()
   }
 
-  const decorator = function(Component) {
+  const decorator = function (Component) {
 
     const _cursors = {}
     let _extaProps = {}
 
-    if(cursors.props) {
+    if (cursors.props) {
       _extaProps = cursors.props
       delete cursors.props
     }
 
     Object.keys(cursors).forEach(key => {
       const val = cursors[key]
-      if(typeof val === 'string') {
+      if (typeof val === 'string') {
         _cursors[key] = val.split('.')
-      } else if(Array.isArray(val)) {
+      } else if (Array.isArray(val)) {
         _cursors[key] = val
       } else {
         _extaProps[key] = val
@@ -99,21 +78,38 @@ export default function(cursors, _Component){
       }
 
       handleRef = el => {
-        if(el) {
+        if (el) {
           this.$component = el
         }
       }
 
 
       shouldComponentUpdate(nextProps, nextState) {
-        return scu(_cursors, this.props, nextProps, this.state, nextState)
+        const {props, state} = this
+        for (let keys = Object.keys(_cursors), i = keys.length; i--;) {
+          if (nextState[keys[i]] !== state[keys[i]]) {
+            return true
+          }
+        }
+
+        for (let keys = Object.keys(nextProps), i = keys.length; i--;) {
+          if (nextProps[keys[i]] !== props[keys[i]]) {
+            return true
+          }
+        }
+
+        return false
       }
 
 
       render() {
-        return <Component {...this.props} {...this.state} {..._extaProps} ref={this.handleRef} />
+        return <Component 
+          {...this.props}
+          {...this.state}
+          {..._extaProps}
+          ref={this.handleRef} />
       }
-		}
+    }
   }
 
   return _Component ? decorator(_Component) : decorator
