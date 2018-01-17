@@ -43,7 +43,7 @@ This library contains two functions – `root` and `connect`.
 
 The `root` method aims at passing a baobab tree through context so that other components (branches/containers/controllers) may use it. Typically, your app's top-level component will probably contains a root defintion.
 
-```
+```javascript
 import Baobab from 'baobab'
 import {root} from 'baobab-connect'
 const tree = new Baobab({foo: {bar: 'baz'}})
@@ -56,7 +56,7 @@ The `connect` bound to cursors, get their data from the tree given by the root.
 
 Here is an example of displaying `foo.bar` value of our tree created at previous step:
 
-```
+```javascript
 import connect from 'baobab-connect'
 
 @connect({
