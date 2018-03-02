@@ -1,6 +1,6 @@
 {
   "name": "baobab-connect",
-  "version": "0.1.9",
+  "version": "0.1.91",
   "description": "React integration for Baobab.",
   "main": "./index.js",
   "scripts": {
