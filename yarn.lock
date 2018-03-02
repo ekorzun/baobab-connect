@@ -881,9 +881,9 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
-baobab@^2.3.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/baobab/-/baobab-2.4.3.tgz#9655d6f1a69ce66a82fc6391773ca6a9f7a25a9d"
+baobab@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/baobab/-/baobab-2.5.1.tgz#f2e54964566c8e99a8d48b4eb3023172b3149f4d"
   dependencies:
     emmett "^3.1.1"
 

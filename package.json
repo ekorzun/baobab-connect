@@ -35,7 +35,6 @@
     "babel-preset-stage-1": "^6.5.0",
     "babel-register": "^6.6.0",
     "babelify": "^7.2.0",
-    "baobab": "^2.3.3",
     "browserify": "^13.0.0",
     "create-react-class": "^15.5.3",
     "enzyme": "^2.0.0",
@@ -57,5 +56,8 @@
         "jsx": true
       }
     }
+  },
+  "peerDependencies": {
+    "baobab": "^2.5.1"
   }
 }
